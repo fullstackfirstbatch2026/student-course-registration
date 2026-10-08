@@ -1,0 +1,585 @@
+/* ==========================================
+   REPORTS PAGE
+   ========================================== */
+
+.reports-page {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.reports-container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.reports-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.reports-label {
+  margin: 0 0 7px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.reports-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.reports-subtitle {
+  margin: 9px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.reports-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0 16px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #334155;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.reports-refresh-button:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.reports-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================
+   ERROR
+   ========================================== */
+
+.reports-error {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+
+  background: #fef2f2;
+  color: #991b1b;
+
+  font-size: 14px;
+}
+
+/* ==========================================
+   SUMMARY CARDS
+   ========================================== */
+
+.reports-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+.reports-summary-card {
+  padding: 22px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.reports-summary-card span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.reports-summary-card strong {
+  display: block;
+
+  color: #0f172a;
+
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ==========================================
+   REPORT GRID
+   ========================================== */
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   REPORT PANEL
+   ========================================== */
+
+.reports-panel {
+  margin-bottom: 20px;
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.reports-grid .reports-panel {
+  margin-bottom: 0;
+}
+
+.reports-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.reports-panel-label {
+  margin: 0 0 6px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.9px;
+}
+
+.reports-panel-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   REGISTRATION OVERVIEW
+   ========================================== */
+
+.registration-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.registration-stat {
+  padding: 18px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.registration-stat span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.registration-stat strong {
+  display: block;
+
+  color: #0f172a;
+
+  font-size: 27px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   SEAT UTILIZATION
+   ========================================== */
+
+.utilization-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.utilization-number {
+  color: #2563eb;
+
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.utilization-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.utilization-text span {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.utilization-bar {
+  width: 100%;
+  height: 10px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e2e8f0;
+}
+
+.utilization-progress {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #6366f1
+    );
+
+  transition: width 0.35s ease;
+}
+
+/* ==========================================
+   COURSE REPORT LIST
+   ========================================== */
+
+.course-report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.course-report-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.2fr) minmax(180px, 2fr) 60px;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.course-report-info {
+  min-width: 0;
+}
+
+.course-report-info > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.course-report-info strong {
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.course-report-info span {
+  display: inline-flex;
+
+  padding: 4px 8px;
+
+  border-radius: 6px;
+
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.course-report-info small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.course-report-bar {
+  height: 9px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e2e8f0;
+}
+
+.course-report-progress {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #6366f1
+    );
+
+  transition: width 0.35s ease;
+}
+
+.course-report-percent {
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-align: right;
+}
+
+/* ==========================================
+   FACULTY REPORT
+   ========================================== */
+
+.faculty-report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.faculty-report-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 16px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.faculty-report-card > div:first-child {
+  min-width: 0;
+}
+
+.faculty-report-card strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.faculty-report-card span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.faculty-course-count {
+  flex-shrink: 0;
+
+  min-width: 62px;
+
+  padding: 8px 10px;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  text-align: center;
+}
+
+.faculty-course-count strong {
+  font-size: 18px;
+}
+
+.faculty-course-count span {
+  margin-top: 2px;
+
+  font-size: 10px;
+}
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.reports-empty {
+  padding: 35px 20px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 1100px) {
+  .reports-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-report-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 750px) {
+  .reports-page {
+    padding: 24px 18px;
+  }
+
+  .reports-header {
+    flex-direction: column;
+  }
+
+  .reports-refresh-button {
+    width: 100%;
+  }
+
+  .reports-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .course-report-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .course-report-percent {
+    text-align: left;
+  }
+
+  .faculty-report-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 520px) {
+  .reports-page {
+    padding: 18px 14px;
+  }
+
+  .reports-header h1 {
+    font-size: 27px;
+  }
+
+  .reports-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-panel {
+    padding: 18px;
+  }
+
+  .registration-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .utilization-content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .utilization-number {
+    font-size: 36px;
+  }
+
+  .course-report-info small {
+    line-height: 1.4;
+  }
+}

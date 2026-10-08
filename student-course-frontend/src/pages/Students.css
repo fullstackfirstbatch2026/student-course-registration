@@ -1,0 +1,652 @@
+/* ================================
+   STUDENTS PAGE
+================================ */
+
+.student-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Individual student row */
+
+.student-item {
+  display: grid;
+  grid-template-columns: 56px minmax(180px, 1fr) minmax(220px, 1fr) minmax(160px, 0.7fr);
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px 28px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-item:last-child {
+  border-bottom: none;
+}
+
+.student-item:hover {
+  background: rgba(124, 92, 255, 0.06);
+}
+
+/* Student icon */
+
+.student-item .registration-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: rgba(124, 92, 255, 0.14);
+  color: #8b7cff;
+
+  flex-shrink: 0;
+}
+
+/* Student information */
+
+.student-item .registration-info {
+  min-width: 0;
+}
+
+.student-item .registration-info h3 {
+  margin: 0 0 6px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.student-item .registration-info p {
+  margin: 0;
+
+  font-size: 13px;
+  color: #777b91;
+}
+
+/* Email and phone */
+
+.student-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+
+  color: #9a9daf;
+  font-size: 14px;
+}
+
+.student-contact svg {
+  color: #8b7cff;
+  flex-shrink: 0;
+}
+
+.student-contact span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1000px) {
+  .student-item {
+    grid-template-columns: 50px 1fr 1fr;
+  }
+
+  .student-contact:last-child {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .student-item {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .student-item .registration-info {
+    grid-column: 2;
+  }
+
+  .student-contact {
+    grid-column: 2;
+  }
+
+  .student-contact:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .student-item {
+    padding: 16px;
+  }
+
+  .student-item .registration-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .student-item .registration-info h3 {
+    font-size: 15px;
+  }
+
+  .student-contact {
+    font-size: 13px;
+  }
+}
+
+
+/* ================================
+   STUDENT SEARCH
+================================ */
+
+.student-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 0 28px 20px;
+  padding: 13px 16px;
+
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+
+  color: #8b7cff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-search:focus-within {
+  border-color: rgba(139, 124, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.08);
+}
+
+.student-search input {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.student-search input::placeholder {
+  color: #686b7c;
+}
+
+.clear-search {
+  width: 26px;
+  height: 26px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #aaaebe;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.clear-search:hover {
+  background: rgba(139, 124, 255, 0.2);
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .student-search {
+    margin: 0 18px 18px;
+  }
+}
+
+/* ================================
+   STUDENT HEADER ACTIONS
+================================ */
+
+.student-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.add-student-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #7c5cff;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-student-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+  box-shadow: 0 8px 25px rgba(124, 92, 255, 0.25);
+}
+
+/* ================================
+   MODAL
+================================ */
+
+.student-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.student-modal {
+  width: 100%;
+  max-width: 500px;
+
+  background: #111217;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+
+  overflow: hidden;
+}
+
+.student-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 24px 26px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.student-modal-header h2 {
+  margin: 5px 0 0;
+
+  color: #ffffff;
+
+  font-size: 22px;
+}
+
+.student-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: #9da0b0;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ================================
+   STUDENT FORM
+================================ */
+
+.student-form {
+  padding: 26px;
+}
+
+.student-form-group {
+  margin-bottom: 20px;
+}
+
+.student-form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #d8d9e2;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.student-form-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.035);
+  color: #ffffff;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-form-group input::placeholder {
+  color: #656878;
+}
+
+.student-form-group input:focus {
+  border-color: rgba(124, 92, 255, 0.7);
+
+  box-shadow:
+    0 0 0 3px rgba(124, 92, 255, 0.1);
+}
+
+/* ================================
+   FORM BUTTONS
+================================ */
+
+.student-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.student-cancel-button,
+.student-save-button {
+  padding: 11px 17px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.student-cancel-button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: transparent;
+  color: #a8aab8;
+}
+
+.student-cancel-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.student-save-button {
+  border: none;
+
+  background: #7c5cff;
+  color: #ffffff;
+}
+
+.student-save-button:hover {
+  opacity: 0.9;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+  .student-header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .student-header-actions button {
+    width: 100%;
+  }
+
+  .student-modal-header {
+    padding: 20px;
+  }
+
+  .student-form {
+    padding: 20px;
+  }
+}
+
+/* ================================
+   FORM MESSAGE
+================================ */
+
+.student-form-message {
+  margin-top: 4px;
+  margin-bottom: 18px;
+  padding: 11px 13px;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.student-form-message.success {
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.25);
+  color: #67e89a;
+}
+
+.student-form-message.error {
+  background: rgba(255, 80, 80, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.25);
+  color: #ff8585;
+}
+
+.student-save-button:disabled,
+.student-cancel-button:disabled,
+.student-modal-close:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* ==========================================
+   STUDENT ACTION BUTTONS
+   ========================================== */
+
+.student-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 170px;
+}
+
+/* Common button style */
+
+.student-edit-button,
+.student-delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-width: 82px;
+  height: 38px;
+
+  padding: 0 13px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ==========================================
+   EDIT BUTTON
+   ========================================== */
+
+.student-edit-button {
+  color: #c4b5fd;
+
+  background: rgba(124, 58, 237, 0.10);
+
+  border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.student-edit-button:hover {
+  color: #ffffff;
+
+  background: rgba(124, 58, 237, 0.25);
+
+  border-color: rgba(139, 92, 246, 0.70);
+
+  box-shadow:
+    0 6px 18px rgba(124, 58, 237, 0.18);
+
+  transform: translateY(-1px);
+}
+
+.student-edit-button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   DELETE BUTTON
+   ========================================== */
+
+.student-delete-button {
+  color: #fca5a5;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.30);
+}
+
+.student-delete-button:hover {
+  color: #ffffff;
+
+  background: rgba(239, 68, 68, 0.20);
+
+  border-color: rgba(239, 68, 68, 0.65);
+
+  box-shadow:
+    0 6px 18px rgba(239, 68, 68, 0.15);
+
+  transform: translateY(-1px);
+}
+
+.student-delete-button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   DISABLED STATE
+   ========================================== */
+
+.student-edit-button:disabled,
+.student-delete-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==========================================
+   ICON SIZE
+   ========================================== */
+
+.student-edit-button svg,
+.student-delete-button svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 900px) {
+  .student-actions {
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-actions {
+    gap: 8px;
+  }
+
+  .student-edit-button,
+  .student-delete-button {
+    flex: 1;
+    min-width: 0;
+  }
+}
